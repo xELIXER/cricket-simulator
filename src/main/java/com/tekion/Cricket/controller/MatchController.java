@@ -25,7 +25,7 @@ public class MatchController {
         return "<body>" +
                 "<p>test from spring :D</p>" +
                 "<p>Go to localhost:8080/startgame to start the cricket game.</p>" +
-                "<p>or else click <a href='http://localhost:8080/startgame'>here</a></p>" +
+                "<p>or else click <a href='http://localhost:8080/match'>here</a></p>" +
                 "</body>";
     }
 

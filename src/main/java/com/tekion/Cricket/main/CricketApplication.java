@@ -33,8 +33,8 @@ public class CricketApplication {
 	public String hello(){
 		return "<body>" +
 				"<p>hello from spring :D</p>" +
-				"<p>Go to localhost:8080/startgame to start the cricket game.</p>" +
-				"<p>or else click <a href='http://localhost:8080/startgame'>here</a></p>" +
+				"<p>Go to <code>localhost:8080/match</code> to start the cricket game.</p>" +
+				"<p>or else click <a href='http://localhost:8080/match'>here</a></p>" +
 				"</body>";
 	}
 
