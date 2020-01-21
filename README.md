@@ -2,6 +2,7 @@
 Game of Cricket:  Write classes CricketGame, Player, Match and MatchController and any class thet they think is required. Write a random function which returns 0,1,2,3,4,5,6 or W.  That is for every ball it says runs or wicket. Match controller to take 2 teams and uses the sequence of random function calls and prints the results. Run multiple times and print results" please create your individual repository on git every time I give an enhancement on the project.. it should be checked in as a new branch
 
 ### Files
+All the classes with only instance variable and no methods are put into /beans. All the functions that operate on objects and call different functions are put into /controller. /util has all the class with only static functions, i.e. we only use the class name to use the functions defined in them. /main holds the class that has the main function written.
   - Beans
     - Match
     - Player

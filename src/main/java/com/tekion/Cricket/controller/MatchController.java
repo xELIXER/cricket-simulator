@@ -24,7 +24,16 @@ public class MatchController {
     public String test(){
         return "<body>" +
                 "<p>test from spring :D</p>" +
-                "<p>Go to localhost:8080/startgame to start the cricket game.</p>" +
+                "<p>Go to <code><b>localhost:8080/match</b></code> to start the cricket game.</p>" +
+                "<p>or else click <a href='http://localhost:8080/match'>here</a></p>" +
+                "</body>";
+    }
+
+    @RequestMapping("/")
+    public String hello(){
+        return "<body>" +
+                "<p>hello from spring :D</p>" +
+                "<p>Go to <code><b>localhost:8080/match</b></code> to start the cricket game.</p>" +
                 "<p>or else click <a href='http://localhost:8080/match'>here</a></p>" +
                 "</body>";
     }
