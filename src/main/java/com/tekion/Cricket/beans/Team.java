@@ -12,12 +12,11 @@ import java.util.List;
 public class Team {
     private List<Player> players;
     private String name;
-    private int runsToBeat;
     private int totalRuns;
     private int dotBalls;
     private int sixes;
     private int fours;
     private int wickets;
     private int ballsPlayed;
-
+    private String oversPlayed;
 }

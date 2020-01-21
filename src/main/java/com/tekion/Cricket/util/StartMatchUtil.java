@@ -17,41 +17,35 @@ public class StartMatchUtil {
             /*
              * Team 1 wins the toss and chooses to bat.
              * */
+
             indvAusODI.setFirst(team1);
-            PlayMatch.play(team1, Integer.MAX_VALUE, false);
+            indvAusODI.setSecond(team2);
+
+            PlayMatch.play3(team1, team2, false);
 
             /*
              * Team 2 goes now.
              * */
-            indvAusODI.setSecond(team2);
-            PlayMatch.play(team2, team1.getTotalRuns(), true);
+
+            PlayMatch.play3(team2, team2, true);
         }
         else{
             /*
              * Team 2 wins the toss and chooses to bat.
              * */
+
             indvAusODI.setFirst(team2);
-            PlayMatch.play(team2, Integer.MAX_VALUE, false);
-            /*
-             * Team 2 goes now.
-             * */
             indvAusODI.setSecond(team1);
-            PlayMatch.play(team1, team2.getTotalRuns(), true);
+            PlayMatch.play3(team2, team1, false);
+
+            /*
+             * Team 1 goes now.
+             * */
+
+            PlayMatch.play3(team1, team2, true);
         }
         String message = Result.printResult(indvAusODI ,indvAusODI.getFirst(), indvAusODI.getSecond());
-        System.out.println(message);
+
         return message;
-
-//		MatchController controller = new MatchController();
-//		controller.setMatch(indvAusODI);
-//
-//		if(controller.toss() == 0){
-//			/*
-//			 * Team 1 goes first.
-//			 */
-//
-//
-//		}
-
     }
 }

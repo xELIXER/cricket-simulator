@@ -1,6 +1,9 @@
 package com.tekion.Cricket.util;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.tekion.Cricket.beans.Match;
+import com.tekion.Cricket.beans.Player;
 import com.tekion.Cricket.beans.Team;
 
 public class Result {
@@ -38,6 +41,10 @@ public class Result {
         if(first.getTotalRuns() < second.getTotalRuns()){
             message += "<p><h1><b>" + second.getName() + " won</b></h1></p></body>";
         }
-        return message;
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+//        return message;
+        Team[] teams = {first, second};
+        return gson.toJson(teams);
     }
 }
