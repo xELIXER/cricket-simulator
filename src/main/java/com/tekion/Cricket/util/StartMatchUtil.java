@@ -1,15 +1,28 @@
 package com.tekion.Cricket.util;
 
+
 import com.tekion.Cricket.beans.Match;
 import com.tekion.Cricket.beans.Team;
 
 import java.util.Date;
 
-public class StartMatchUtil {
-    public static String startMatch(){
-        Team team1 = TeamUtil.createTeam1("INDIA");
 
-        Team team2 = TeamUtil.createTeam2("AUSTRALIA");
+public class StartMatchUtil {
+    private static Team team1;
+    private static Team team2;
+
+    public static Team getTeam1() {
+        return team1;
+    }
+
+    public static Team getTeam2() {
+        return team2;
+    }
+
+    public static String startMatch(){
+        team1 = TeamUtil.createTeam1("INDIA");
+
+        team2 = TeamUtil.createTeam2("AUSTRALIA");
 
         Match indvAusODI = new Match("IND v AUS ODI", "M Chinnaswamy Stadium", new Date(), team1, team2, null, null);
         System.out.println("hello");

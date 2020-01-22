@@ -36,7 +36,7 @@ All the classes with only instance variable and no methods are put into /beans. 
     - ```4: 8% probability```
     - ```5: 1% probability```
     - ```6: 3% probability```
-
+ - Scoreboard is available for each team as well as each player wise.
 ### Tech
 - Spring Boot 2.2.3
 - Java 13
@@ -51,4 +51,7 @@ If using PostMan use the Preview mode to see the response.
 ### Endpoints
 - `localhost:8080/`          : Greeting message.
 - `localhost:8080/match` : Start the game.
+- `localhost:8080/scoreboard` : Scoreboard for the both the teams with all players.
+- `localhost:8080/scoreboard/team1` : Scoreboard for 1st team with all players.
+- `localhost:8080/scoreboard/team2` : Scoreboard for 2nd team with all players.
 
