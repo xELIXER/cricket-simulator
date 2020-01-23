@@ -37,6 +37,7 @@ All the classes with only instance variable and no methods are put into /beans. 
     - ```5: 1% probability```
     - ```6: 3% probability```
  - Scoreboard is available for each team as well as each player wise.
+ - Maiden over feature allows us to see which all bowler did the bowling and gave 0 runs.
 ### Tech
 - Spring Boot 2.2.3
 - Java 13
@@ -49,9 +50,9 @@ Import the project with InteliJ IDEA. Let the gradle build. Import all the depen
 If using PostMan use the Preview mode to see the response.
 
 ### Endpoints
-- `localhost:8080/`          : Greeting message.
-- `localhost:8080/match` : Start the game.
-- `localhost:8080/scoreboard` : Scoreboard for the both the teams with all players.
+- `localhost:8080/`                 : Greeting message.
+- `localhost:8080/match`            : Start the game.
+- `localhost:8080/scoreboard`       : Scoreboard for the both the teams with all players.
 - `localhost:8080/scoreboard/team1` : Scoreboard for 1st team with all players.
 - `localhost:8080/scoreboard/team2` : Scoreboard for 2nd team with all players.
 
