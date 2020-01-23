@@ -1,15 +1,11 @@
 package com.tekion.Cricket.controller;
 
-import com.tekion.Cricket.beans.Match;
-import com.tekion.Cricket.beans.Team;
+import com.tekion.Cricket.beans.Player;
 import com.tekion.Cricket.util.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Date;
 
 @RestController
 @Service
@@ -37,5 +33,10 @@ public class MatchController {
                 "<p>or else click <a href='http://localhost:8080/match'>here</a></p>" +
                 "</body>";
     }
-
+    @RequestMapping(value="/testobj")
+    public Player getObj()
+    {
+        Player p1 = new Player("Manzil Moharana", "jan 3, 1980", Role.ALL_ROUNDER);
+        return p1;
+    }
 }

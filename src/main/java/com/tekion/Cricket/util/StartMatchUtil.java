@@ -40,7 +40,7 @@ public class StartMatchUtil {
              * Team 2 goes now.
              * */
 
-            PlayMatch.play3(team2, team2, true);
+            PlayMatch.play3(team2, team1, true);
         }
         else{
             /*

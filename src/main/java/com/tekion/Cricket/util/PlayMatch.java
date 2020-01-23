@@ -164,14 +164,17 @@ public class PlayMatch {
                 bowllers.add(x);
         }
 
+
         Player currBatsman = batsmen.get(0);
         Player curBowler = bowllers.get(0);
-
-
+        int runsThisOver = 0;
         int i;
+
+
         for(i = 0; i < 300; i++ ){
 
             if( curBowler.getBowlingStats().get("noOfBallsPlayed") >= curBowler.getBowlingStats().get("noOfBallsToPlay") && bowllers.size() > 1){
+                if(bowllers.size() == 1) break;
                 if(secondInning)System.out.println("second inning ");
                 else System.out.println("first inning ");
                 System.out.println(bowllers.toString());
@@ -182,11 +185,18 @@ public class PlayMatch {
                 curBowler = bowllers.get(0);
             }
 
+            if (i%6 == 0){
+                if(runsThisOver == 0 && i > 0)
+                    curBowler.getBowlingStats().put("maidenOver", curBowler.getBowlingStats().get("maidenOver") + 1);
+                runsThisOver = 0;
+            }
+
             if(battingTeam.getWickets() > 9 || (secondInning && battingTeam.getTotalRuns() > bowlingTeam.getTotalRuns()) ){
                 break;
             }
 
             int x = GetRunsOrWicket.betterRandom();
+            runsThisOver += x;
             curBowler.getBowlingStats().put("noOfBallsPlayed", curBowler.getBowlingStats().get("noOfBallsPlayed") + 1);
 
             if(x == -1) {
