@@ -5,6 +5,7 @@ Game of Cricket:  Write classes CricketGame, Player, Match and MatchController a
 All the classes with only instance variable and no methods are put into /beans. All the functions that operate on objects and call different functions are put into /controller. /util has all the class with only static functions, i.e. we only use the class name to use the functions defined in them. /main holds the class that has the main function written.
   - Beans
     - Match
+    - CricketMatch _extends Match_
     - Player
     - PlayerScore
     - Scorecard

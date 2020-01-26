@@ -1,6 +1,6 @@
 package com.tekion.Cricket.controller;
 
-import com.tekion.Cricket.beans.Match;
+import com.tekion.Cricket.beans.CricketMatch;
 import com.tekion.Cricket.service.SetupMatch;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MatchController {
 
     @RequestMapping("/match")
-    public Match startMatch(){
+    public CricketMatch startMatch(){
         return new SetupMatch().startMatch();
     }
 

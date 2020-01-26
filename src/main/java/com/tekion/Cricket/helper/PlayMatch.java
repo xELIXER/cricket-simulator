@@ -1,7 +1,7 @@
 package com.tekion.Cricket.helper;
 
 import com.tekion.Cricket.beans.Player;
-import com.tekion.Cricket.beans.Scorecard;
+import com.tekion.Cricket.beans.CricketScorecard;
 import com.tekion.Cricket.beans.Team;
 import com.tekion.Cricket.beans.TeamScore;
 import com.tekion.Cricket.util.GenerateRuns;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 @Slf4j
 public class PlayMatch {
-    public static void play(Team battingTeam, Team bowlingTeam, Scorecard scorecard, int overs,
+    public static void play(Team battingTeam, Team bowlingTeam, int overs,
                             Pair<Team, TeamScore> battingScorecard, Pair<Team, TeamScore> bowlingScorecard){
 
         ArrayList<Player> batsmen = TeamUtil.initializeBatsmen(battingTeam);

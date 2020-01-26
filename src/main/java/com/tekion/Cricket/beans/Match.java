@@ -1,17 +1,21 @@
 package com.tekion.Cricket.beans;
 
-import com.tekion.Cricket.beans.Team;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-@AllArgsConstructor
-public class Match {
+public abstract class Match {
     private String name;
     private String groundName;
     private Date date;
-    private int overs;
     private Team first, second;
+
+    public Match(String name, String groundName, Date date, Team first, Team second) {
+        this.name = name;
+        this.groundName = groundName;
+        this.date = date;
+        this.first = first;
+        this.second = second;
+    }
 }

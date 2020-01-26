@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 @Slf4j
 public class ScorecardUtil {
-    public static Scorecard initializeScorecard(Team team1, Team team2, Scorecard scorecard){
+    public static CricketScorecard initializeScorecard(Team team1, Team team2, CricketScorecard scorecard){
         TeamScore teamScorecard1 = new TeamScore();
         HashMap<Player, PlayerScore> t = new HashMap<>();
         for (Player x: team1.getPlayers()) { t.put(x, new PlayerScore() ); }

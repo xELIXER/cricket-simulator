@@ -1,6 +1,6 @@
 package com.tekion.Cricket.controller;
 
-import com.tekion.Cricket.beans.Scorecard;
+import com.tekion.Cricket.beans.CricketScorecard;
 import com.tekion.Cricket.beans.TeamScore;
 import com.tekion.Cricket.service.SetupMatch;
 import org.springframework.stereotype.Service;
@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Service
 public class ScorecardController {
-
     @RequestMapping("/scorecard")
-    public Scorecard getScorecard(){
+    public CricketScorecard getScorecard(){
         return new SetupMatch().getScorecard();
     }
 

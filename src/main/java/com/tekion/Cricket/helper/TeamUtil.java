@@ -26,7 +26,7 @@ public class TeamUtil {
         Player mdShammi         = new Player("Md Shammi", "Jan 3, 1980", Role.BATSMAN, new int[]{5, 30, 20, 18, 15, 8, 1, 3});
         Player jjBumrah         = new Player("JJ Bumrah", "Jan 3, 1980", Role.ALL_ROUNDER, new int[]{5, 30, 20, 18, 15, 8, 1, 3});
 
-        List<Player> players = Arrays.asList(rishabPant, manishPandey, shreyasIyer, ravindraJadeja,
+        List<Player> players = Arrays.asList(rishabPant, manishPandey, ravindraJadeja, shreyasIyer,
                                             navdeepSaini, srikarBharat, kuldeepYadav, shikarDhawan,
                                             shardulThakur, mdShammi, jjBumrah);
         team = new Team(teamName, players);
