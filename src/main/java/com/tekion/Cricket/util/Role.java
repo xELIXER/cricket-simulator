@@ -4,5 +4,7 @@ public enum Role {
     BATSMAN,
     BOWLER,
     WK_KEEPER,
-    ALL_ROUNDER
+    ALL_ROUNDER,
+    BATTING,
+    BOWLING
 }

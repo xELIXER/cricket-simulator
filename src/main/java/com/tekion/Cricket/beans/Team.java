@@ -1,5 +1,7 @@
 package com.tekion.Cricket.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,16 +9,9 @@ import lombok.Setter;
 import java.util.List;
 
 @Data
-@Getter
-@Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
+@AllArgsConstructor
 public class Team {
-    private List<Player> players;
     private String name;
-    private int totalRuns;
-    private int dotBalls;
-    private int sixes;
-    private int fours;
-    private int wickets;
-    private int ballsPlayed;
-    private String oversPlayed;
+    private List<Player> players;
 }

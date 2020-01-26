@@ -4,13 +4,6 @@ import lombok.Data;
 
 @Data
 public class Scorecard {
-    private int totalRuns;
-    private int dotBalls;
-    private int sixes;
-    private int fours;
-    private int ballsPlayed;
-    private int noOfOvers;
-    private int runsGiven;
-    private int wicketsTaken;
-    private int maidenOver;
+    private TeamScore team1Score;
+    private TeamScore team2Score;
 }

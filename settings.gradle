@@ -1,1 +1,3 @@
 rootProject.name = 'Cricket'
+include 'cricketgame'
+
