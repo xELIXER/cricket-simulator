@@ -34,9 +34,9 @@ All the classes with only instance variable and no methods are put into /beans. 
 - A HashMap is used to keep track of the scores. ```-1``` represents Wicket and ```0-6``` represent runs
 - When a team looses 10 wickets, turn for that team is over.
 - For generating runs and wicket, a ```betterRandom``` function is used that generates random number based on different probabilities in `O(n)` time. Such as the chances of a team earning 5 runs is very rare, so it probability is set to 5%. The random number generated is based upon the rating of the player.
-    Rating is defined as a array of numbers that represent the probability of a player getting wicket, dot balls or boundry.
+    Rating is a numbers that represent the probability of a player getting wicket, dot balls or boundry.
     
-    E.g. Virat Kohli's rating = ```{5, 30, 20, 18, 15, 8, 1, 3}```. Means that the probability of him scoring a six is 3%, scoring four is 8% etc.
+    E.g. Virat Kohli's rating = ```6```. Means that the probability of him scoring runs 0 - 6 is higher than compared to a player with a rating lower than 6.
     
  - Scoreboard is available for each team as well as each player wise.
  - Maiden over feature allows us to see which all bowler did the bowling and gave 0 runs.

@@ -1,10 +1,6 @@
 package com.tekion.Cricket.beans;
 
-import com.tekion.Cricket.util.Role;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.HashMap;
 
 @Data
 public class PlayerScore{

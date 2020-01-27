@@ -1,7 +1,5 @@
 package com.tekion.Cricket.beans;
 
-import com.tekion.Cricket.beans.Team;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.Date;
