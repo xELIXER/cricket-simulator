@@ -6,7 +6,6 @@ import lombok.Data;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Data
 public class TeamScore{
@@ -30,5 +29,12 @@ public class TeamScore{
             }
         }
         this.playerScores = temp;
+    }
+
+    public void incrementRuns(int runs){
+        this.totalRuns += runs;
+    }
+    public void incrementWickets(){
+        this.wickets++;
     }
 }

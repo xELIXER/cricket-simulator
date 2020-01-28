@@ -1,7 +1,10 @@
 package com.tekion.Cricket.service;
 
 
-import com.tekion.Cricket.beans.*;
+import com.tekion.Cricket.beans.CricketMatch;
+import com.tekion.Cricket.beans.CricketScorecard;
+import com.tekion.Cricket.beans.Team;
+import com.tekion.Cricket.beans.TeamScore;
 import com.tekion.Cricket.helper.PlayMatch;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

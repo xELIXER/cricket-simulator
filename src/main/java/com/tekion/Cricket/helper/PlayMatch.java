@@ -21,8 +21,8 @@ public class PlayMatch {
         int runsThisOver = 0, ballsPlayed = 0, i;
 
         for(i = 0; i < overs * 6; i++ ){
-            if(ScorecardUtil.getBallsDelivered(bowlingTeam, curBowler, teamScores.get(bowlingTeam)) >=
-                    ScorecardUtil.getBallsToDeliver(bowlingTeam, curBowler, teamScores.get(bowlingTeam)) && bowlers.size() > 1){
+            if(ScorecardUtil.getBallsDelivered(curBowler, teamScores.get(bowlingTeam)) >=
+                    ScorecardUtil.getBallsToDeliver(curBowler, teamScores.get(bowlingTeam)) && bowlers.size() > 1){
                 //Get the next bowler if the current bowler has already delivered the assigned number of balls.
                 bowlers.remove(0);
                 curBowler = bowlers.get(0);

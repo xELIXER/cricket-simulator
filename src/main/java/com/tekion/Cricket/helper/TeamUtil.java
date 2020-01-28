@@ -24,10 +24,9 @@ public class TeamUtil {
         Player mdShammi         = new Player("Md Shammi", "Jan 3, 1980", Role.BATSMAN, 2);
         Player jjBumrah         = new Player("JJ Bumrah", "Jan 3, 1980", Role.ALL_ROUNDER, 3);
 
-        List<Player> players = Arrays.asList(rishabPant, manishPandey, ravindraJadeja, shreyasIyer,
+        return Arrays.asList(rishabPant, manishPandey, ravindraJadeja, shreyasIyer,
                                             navdeepSaini, srikarBharat, kuldeepYadav, shikarDhawan,
                                             shardulThakur, mdShammi, jjBumrah);
-        return players;
     }
 
     public static List<Player> getTeam2Players(){
@@ -43,15 +42,12 @@ public class TeamUtil {
         Player ashtonTurner         = new Player("Ashton Turner", "Jan 3, 1980", Role.WK_KEEPER, 3);
         Player alexCarey            = new Player("Alec Carey", "Jan 3, 1980", Role.WK_KEEPER, 2);
 
-        List<Player> players = Arrays.asList(aronFinch, peterHandscomb, stevenSmith, davidWarner, dArcyShort,
+        return Arrays.asList(aronFinch, peterHandscomb, stevenSmith, davidWarner, dArcyShort,
                 patCummins, joshHazelwood, ashtonAgar, marnusLabushange, ashtonTurner, alexCarey);
-        return players;
     }
 
     public static ArrayList<Player> initializeBatsmen(Team team){
-        ArrayList<Player> batsmen = new ArrayList<>();
-        batsmen.addAll(team.getPlayers());
-        return batsmen;
+        return new ArrayList<>(team.getPlayers());
     }
 
     public static ArrayList<Player> initializeBowlers(Team team){
