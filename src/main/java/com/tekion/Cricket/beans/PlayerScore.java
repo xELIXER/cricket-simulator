@@ -18,4 +18,12 @@ public class PlayerScore{
     private int runsGiven;
     private int wicketsTaken;
     private int maidenOver;
+
+
+    public int incrementRuns(int runs){
+        this.totalRuns += runs;
+        return totalRuns;
+    }
+
+
 }

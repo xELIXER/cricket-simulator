@@ -11,9 +11,7 @@ import java.util.List;
 
 public class TeamUtil {
 
-    public static Team initializeTeam1(String teamName){
-
-        Team team;
+    public static List<Player> getTeam1Players(){
         Player rishabPant       = new Player("Rishab Pant", "Jan 3, 1980", Role.BATSMAN, 3);
         Player manishPandey     = new Player("Manish Pandey", "Jan 3, 1980", Role.BATSMAN, 4);
         Player ravindraJadeja   = new Player("Ravindra Jadeja", "Jan 3, 1980", Role.BATSMAN, 6);
@@ -29,12 +27,10 @@ public class TeamUtil {
         List<Player> players = Arrays.asList(rishabPant, manishPandey, ravindraJadeja, shreyasIyer,
                                             navdeepSaini, srikarBharat, kuldeepYadav, shikarDhawan,
                                             shardulThakur, mdShammi, jjBumrah);
-        team = new Team(teamName, players);
-        return team;
+        return players;
     }
 
-    public static  Team initializeTeam2(String teamName){
-        Team team;
+    public static List<Player> getTeam2Players(){
         Player aronFinch            = new Player("Aron Finch", "Jan 3, 1980", Role.BATSMAN, 5);
         Player peterHandscomb       = new Player("Peter Handscomb", "Jan 3, 1980", Role.BATSMAN, 5);
         Player stevenSmith          = new Player("Steven Smith", "Jan 3, 1980", Role.BATSMAN, 6);
@@ -49,8 +45,7 @@ public class TeamUtil {
 
         List<Player> players = Arrays.asList(aronFinch, peterHandscomb, stevenSmith, davidWarner, dArcyShort,
                 patCummins, joshHazelwood, ashtonAgar, marnusLabushange, ashtonTurner, alexCarey);
-        team = new Team(teamName, players);
-        return team;
+        return players;
     }
 
     public static ArrayList<Player> initializeBatsmen(Team team){

@@ -1,11 +1,9 @@
 package com.tekion.Cricket.util;
 
-import com.tekion.Cricket.beans.Match;
-
-import java.util.ArrayList;
-import java.util.Collections;
-
-public class GenerateRuns {
+public class MathUtil {
+    public static boolean toss(){
+        return (int)(Math.random() * 2) == 0? true : false ;
+    }
     private static int findCeil(int[] elementsToSelectFrom, int random, int low, int high){
         int mid;
         while (low < high)
