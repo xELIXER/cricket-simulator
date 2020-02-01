@@ -1,4 +1,4 @@
-package com.tekion.Cricket.controller;
+package com.tekion.Cricket.api;
 
 import com.tekion.Cricket.beans.CricketScorecard;
 import com.tekion.Cricket.service.MatchController;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Service
-public class CricketGameAPI {
+public class CricketGameApi {
 
     @Autowired
     private MatchController matchController;
