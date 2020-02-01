@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 @Slf4j
-public class PlayMatch {
+public class MatchControllerUtil {
     public static void play(Team battingTeam, Team bowlingTeam, int overs,
                             Map<Team, TeamScore> teamScores){
 
@@ -21,8 +21,7 @@ public class PlayMatch {
         int runsThisOver = 0, ballsPlayed = 0, i;
 
         for(i = 0; i < overs * 6; i++ ){
-            if(ScorecardUtil.getBallsDelivered(curBowler, teamScores.get(bowlingTeam)) >=
-                    ScorecardUtil.getBallsToDeliver(curBowler, teamScores.get(bowlingTeam)) && bowlers.size() > 1){
+            if(ScorecardUtil.ballsLeftToDeliver(teamScores.get(bowlingTeam), curBowler) && bowlers.size() > 1){
                 //Get the next bowler if the current bowler has already delivered the assigned number of balls.
                 bowlers.remove(0);
                 curBowler = bowlers.get(0);
@@ -30,7 +29,7 @@ public class PlayMatch {
             if(ScorecardUtil.getWicketsFallen(teamScores.get(battingTeam)) > 9){
                 break;
             }
-            int runs = MathUtil.betterRandom( curBatsman.getRating() );
+            int runs = MathUtil.generateScore( curBatsman.getRating() );
             ballsPlayed++;
             ScorecardUtil.ballDelivered(curBowler, teamScores.get(bowlingTeam));
             if(i%6 == 5 && runsThisOver == 0){
@@ -47,11 +46,11 @@ public class PlayMatch {
                 ballsPlayed = 0;
                 if(batsmen.size()>1) batsmen.remove(0);
                 curBatsman = batsmen.get(0);
-                ScorecardUtil.wicket(teamScores.get(battingTeam));
-                ScorecardUtil.incrementWicketsTaken(teamScores.get(bowlingTeam), curBowler);
+                ScorecardUtil.incrementWicketForTeam(teamScores.get(battingTeam));
+                ScorecardUtil.incrementWicketsTakenByBowler(teamScores.get(bowlingTeam), curBowler);
             }
             else{
-                ScorecardUtil.incrementRuns(teamScores.get(battingTeam), curBatsman, runs);
+                ScorecardUtil.incrementRunsScored(teamScores.get(battingTeam), curBatsman, runs);
                 ScorecardUtil.incrementRunsGiven(teamScores.get(bowlingTeam), curBowler, runs);
             }
 

@@ -6,11 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ScorecardUtil {
-    public static void wicket(TeamScore battingScorecard){
+    public static void incrementWicketForTeam(TeamScore battingScorecard){
         battingScorecard.incrementWickets();
     }
 
-    public static void incrementRuns(TeamScore battingScorecard, Player curBatsman, int runs) {
+    public static void incrementRunsScored(TeamScore battingScorecard, Player curBatsman, int runs) {
         try{
             battingScorecard.getPlayerScores().get(curBatsman).incrementRuns(runs);
             battingScorecard.incrementRuns(runs);
@@ -43,7 +43,7 @@ public class ScorecardUtil {
             }
     }
 
-    public static void incrementWicketsTaken(TeamScore bowlingScorecard, Player curBowler) {
+    public static void incrementWicketsTakenByBowler(TeamScore bowlingScorecard, Player curBowler) {
         try{
             bowlingScorecard.getPlayerScores().get(curBowler).incrementWicketTaken();
         }catch(Exception e){
@@ -81,24 +81,6 @@ public class ScorecardUtil {
         }
     }
 
-    public static int getBallsDelivered(Player curBowler, TeamScore bowlingScorecard) {
-        try{
-            return bowlingScorecard.getPlayerScores().get(curBowler).getBallsDelivered();
-        }catch(Exception e){
-            log.error("Error while getting the number of balls delivered by the current bowler");
-            throw e;
-        }
-    }
-
-    public static int getBallsToDeliver(Player curBowler, TeamScore bowlingScorecard) {
-        try{
-            return bowlingScorecard.getPlayerScores().get(curBowler).getBallsToDeliver();
-        }catch(Exception e){
-            log.error("Error while getting the number of balls assigned to the current bowler");
-            throw e;
-        }
-    }
-
     public static void saveBallsPlayed(TeamScore battingScorecard, Player curBatsman, int ballsPlayed) {
         try{
             battingScorecard.getPlayerScores().get(curBatsman).setBallsPlayed(ballsPlayed);
@@ -115,5 +97,10 @@ public class ScorecardUtil {
             log.error("Error while updating the number maiden over for the current bowler");
             throw e;
         }
+    }
+
+    public static boolean ballsLeftToDeliver(TeamScore bowlingScorecard, Player curBowler){
+        return bowlingScorecard.getPlayerScores().get(curBowler).getBallsToDeliver() >=
+                bowlingScorecard.getPlayerScores().get(curBowler).getBallsToDeliver();
     }
 }

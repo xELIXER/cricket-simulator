@@ -2,7 +2,7 @@ package com.tekion.Cricket.util;
 
 public class MathUtil {
     public static boolean toss(){
-        return (int)(Math.random() * 2) == 0? true : false ;
+        return (int) (Math.random() * 2) == 0;
     }
     private static int findCeil(int[] elementsToSelectFrom, int random, int low, int high){
         int mid;
@@ -19,7 +19,7 @@ public class MathUtil {
         return (elementsToSelectFrom[low] >= random) ? low : -1;
     }
 
-    public static int betterRandom(int rating){
+    public static int generateScore(int rating){
         int[] elementsToSelectFrom = {-1,0,1,2,3,4,5,6};
         int n = 8;
         int[] prefix = new int[n];
@@ -37,7 +37,7 @@ public class MathUtil {
             prefix[i]  = prefix[i - 1] + probabilities[i];
         }
         int random = (int) (Math.random() * sum) + 1;
-        int indexc = findCeil(prefix, random, 0, 7);
-        return elementsToSelectFrom[indexc];
+        int index = findCeil(prefix, random, 0, 7);
+        return elementsToSelectFrom[index];
     }
 }
