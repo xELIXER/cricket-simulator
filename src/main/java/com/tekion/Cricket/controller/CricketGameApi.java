@@ -1,4 +1,4 @@
-package com.tekion.Cricket.api;
+package com.tekion.Cricket.controller;
 
 import com.tekion.Cricket.beans.CricketScorecard;
 import com.tekion.Cricket.service.MatchController;
@@ -15,7 +15,7 @@ public class CricketGameApi {
     private MatchController matchController;
 
     @RequestMapping("/match")
-    public CricketScorecard startMatch(){
+    public CricketScorecard conductMatch(){
         return matchController.conductMatch();
     }
 

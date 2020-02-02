@@ -100,7 +100,7 @@ public class ScorecardUtil {
     }
 
     public static boolean ballsLeftToDeliver(TeamScore bowlingScorecard, Player curBowler){
-        return bowlingScorecard.getPlayerScores().get(curBowler).getBallsToDeliver() >=
+        return bowlingScorecard.getPlayerScores().get(curBowler).getBallsDelivered() >=
                 bowlingScorecard.getPlayerScores().get(curBowler).getBallsToDeliver();
     }
 }

@@ -3,13 +3,15 @@ package com.tekion.Cricket.beans;
 import lombok.Data;
 
 import java.util.HashMap;
-import java.util.Map;
 
 @Data
 public class CricketScorecard {
+    private final String firstBatting;
+    private String winner;
     private final HashMap<Team,TeamScore> teamScores;
 
     public CricketScorecard(Team t1, Team t2){
+        this.firstBatting = t1.getName();
         this.teamScores = getCricketScorecardInstance(t1,t2);
     }
 
