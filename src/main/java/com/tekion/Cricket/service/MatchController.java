@@ -22,23 +22,17 @@ public class MatchController {
         CricketMatch match = new CricketMatch("IND v AUS ODI", "M Chinnaswamy Stadium",
                 new Date(), null, null, 50, "INDIA", "AUSTRALIA");
         if(toss()){
-            beginMatch(match.getTeam1(),match.getTeam2(), match, match.getScorecard().getTeamScores());
+            beginMatch(match.getTeam1(),match.getTeam2(), match, match.getScorecard());
         }
         else{
-            beginMatch(match.getTeam2(),match.getTeam1(), match, match.getScorecard().getTeamScores());
+            beginMatch(match.getTeam2(),match.getTeam1(), match, match.getScorecard());
         }
         return match.getScorecard();
     }
-    void beginMatch(Team team1, Team team2, CricketMatch match, HashMap<Team, TeamScore> teamScores){
+    void beginMatch(Team team1, Team team2, CricketMatch match, CricketScorecard scorecard){
         match.setFirst(team1);
         match.setSecond(team2);
-        play(team1, team2, match.getOvers(), teamScores, false);
-        play(team2, team1, match.getOvers(), teamScores, true);
-        if(teamScores.get(team1).getTotalRuns() > teamScores.get(team2).getTotalRuns()){
-            match.getScorecard().setWinner(team1.getName());
-        }
-        else{
-            match.getScorecard().setWinner(team2.getName());
-        }
+        play(team1, team2, match.getOvers(), scorecard, false);
+        play(team2, team1, match.getOvers(), scorecard, true);
     }
 }

@@ -1,5 +1,6 @@
 package com.tekion.Cricket.helper;
 
+import com.tekion.Cricket.beans.CricketScorecard;
 import com.tekion.Cricket.beans.Player;
 import com.tekion.Cricket.beans.Team;
 import com.tekion.Cricket.beans.TeamScore;
@@ -7,18 +8,20 @@ import com.tekion.Cricket.util.MathUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
 public class MatchControllerUtil {
     public static void play(Team battingTeam, Team bowlingTeam, int overs,
-                            Map<Team, TeamScore> teamScores, boolean isSecondInning){
+                            CricketScorecard scorecard, boolean isSecondInning){
 
         ArrayList<Player> batsmen = TeamUtil.initializeBatsmen(battingTeam);
         ArrayList<Player> bowlers = TeamUtil.initializeBowlers(bowlingTeam);
         Player curBatsman = batsmen.get(0);
         Player curBowler = bowlers.get(0);
         int runsThisOver = 0, ballsPlayed = 0, i;
+        HashMap<Team, TeamScore> teamScores = scorecard.getTeamScores();
 
         for(i = 0; i < overs * 6; i++ ){
 
@@ -68,5 +71,14 @@ public class MatchControllerUtil {
             }
         }
         ScorecardUtil.setBallsPlayed(teamScores.get(battingTeam), i);
+        if( isSecondInning && teamScores.get(battingTeam).getTotalRuns() > teamScores.get(bowlingTeam).getTotalRuns() ){
+            scorecard.setWinner(battingTeam.getName());
+        }
+        else if(isSecondInning && teamScores.get(battingTeam).getTotalRuns() < teamScores.get(bowlingTeam).getTotalRuns()){
+            scorecard.setWinner(bowlingTeam.getName());
+        }
+        else if ( isSecondInning && teamScores.get(battingTeam).getTotalRuns() == teamScores.get(bowlingTeam).getTotalRuns() ){
+            scorecard.setWinner("DRAW");
+        }
     }
 }
