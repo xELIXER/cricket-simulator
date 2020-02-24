@@ -9,10 +9,10 @@ import java.util.List;
 
 @Data
 public class TeamScore{
-    private int     totalBalls;
-    private int     totalRuns;
-    private int     wickets;
-    private String  overs;
+    private int totalBalls;
+    private int totalRuns;
+    private int wickets;
+    private String overs;
 
     HashMap<Player,PlayerScore > playerScores;
 
@@ -22,10 +22,10 @@ public class TeamScore{
         this.wickets = 0;
         this.overs = "";
         HashMap<Player, PlayerScore> temp = new HashMap<>();
-        for (Player x: players) {
-            temp.put(x, new PlayerScore());
-            if(x.getRole().equals(Role.BOWLER)){
-                temp.get(x).setBallsToDeliver(100);
+        for (Player player: players) {
+            temp.put(player, new PlayerScore());
+            if(player.getRole().equals(Role.BOWLER)){
+                temp.get(player).setBallsToDeliver(100);
             }
         }
         this.playerScores = temp;

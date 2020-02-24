@@ -1,9 +1,6 @@
 package com.tekion.Cricket.helper;
 
-import com.tekion.Cricket.beans.CricketScorecard;
-import com.tekion.Cricket.beans.Player;
-import com.tekion.Cricket.beans.Team;
-import com.tekion.Cricket.beans.TeamScore;
+import com.tekion.Cricket.beans.*;
 import com.tekion.Cricket.util.MathUtil;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,10 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
-public class MatchControllerUtil {
-    public static void play(Team battingTeam, Team bowlingTeam, int overs,
-                            CricketScorecard scorecard, boolean isSecondInning){
+public class InningSimulator {
+    public static void simulateInning(Team battingTeam, Team bowlingTeam, CricketMatch match, boolean isSecondInning){
 
+        int overs = match.getOvers();
+        CricketScorecard scorecard = match.getScorecard();
         ArrayList<Player> batsmen = TeamUtil.initializeBatsmen(battingTeam);
         ArrayList<Player> bowlers = TeamUtil.initializeBowlers(bowlingTeam);
         Player curBatsman = batsmen.get(0);

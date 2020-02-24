@@ -9,7 +9,8 @@ public abstract class Match {
     private String name;
     private String groundName;
     private Date date;
-    private Team first, second;
+    private Team first;
+    private Team second;
 
     public Match(String name, String groundName, Date date, Team first, Team second) {
         this.name = name;

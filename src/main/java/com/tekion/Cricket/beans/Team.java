@@ -13,14 +13,19 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor
 public class Team {
+    private String id;
     private String name;
     private List<Player> players;
 
-    public Team(String name) {
+    private Team(String name) {
         this.name = name;
         if(name.equals("INDIA"))
             this.players = TeamUtil.getTeam1Players();
         else
             this.players = TeamUtil.getTeam2Players();
+    }
+
+    public static Team getTeamInstance(String name){
+        return new Team(name);
     }
 }

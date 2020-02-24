@@ -15,8 +15,8 @@ public class CricketMatch extends Match {
                         String team2Name) {
         super(name, groundName, date,first,second);
         this.overs = overs;
-        this.team1 = new Team(team1Name);
-        this.team2 = new Team(team2Name);
+        this.team1 = Team.getTeamInstance(team1Name);
+        this.team2 = Team.getTeamInstance(team2Name);
         this.scorecard = new CricketScorecard(team1,team2);
     }
 

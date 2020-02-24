@@ -16,8 +16,7 @@ public class ScorecardUtil {
             battingScorecard.incrementRuns(runs);
         }
         catch (Exception e){
-            log.error("error while incrementing runs");
-            throw e;
+            log.error("error while incrementing runs", e);
         }
     }
 
@@ -31,15 +30,13 @@ public class ScorecardUtil {
             try{
                 battingScorecard.getPlayerScores().get(curBatsman).incrementFours();
             }catch (Exception e){
-                log.error("Error while incrementing Fours");
-                throw e;
+                log.error("Error while incrementing Fours: ",e);
             }
         else
             try{
                 battingScorecard.getPlayerScores().get(curBatsman).incrementSixes();
             }catch (Exception e){
-                log.error("Error while incrementing Sixes");
-                throw e;
+                log.error("Error while incrementing Sixes", e);
             }
     }
 
@@ -47,8 +44,7 @@ public class ScorecardUtil {
         try{
             bowlingScorecard.getPlayerScores().get(curBowler).incrementWicketTaken();
         }catch(Exception e){
-            log.error("Error while incrementing wickets taken by the current bowler");
-            throw e;
+            log.error("Error while incrementing wickets taken by the current bowler", e);
         }
     }
 
@@ -58,26 +54,25 @@ public class ScorecardUtil {
             if(runs == 0)
                 bowlingScorecard.getPlayerScores().get(curBowler).incrementDotBalls();
         }catch (Exception e){
-            log.error("error while incrementing runs" ,e);
-            throw e;
+            log.error("error while incrementing runs" , e);
         }
     }
 
     public static int getWicketsFallen(TeamScore battingScorecard) {
+        int wicketsFallen = 0;
         try{
-            return battingScorecard.getWickets();
+             wicketsFallen = battingScorecard.getWickets();
         }catch (Exception e){
-            log.error("Error while getting number of wickets fallen");
-            throw e;
+            log.error("Error while getting number of wickets fallen", e);
         }
+        return wicketsFallen;
     }
 
     public static void ballDelivered(Player curBowler, TeamScore bowlingScorecard) {
         try{
             bowlingScorecard.getPlayerScores().get(curBowler).incrementBallsDelivered();
         }catch(Exception e){
-            log.error("Error while updating the  number of Balls delivered by the current bowler");
-            throw e;
+            log.error("Error while updating the  number of Balls delivered by the current bowler", e);
         }
     }
 
@@ -85,8 +80,7 @@ public class ScorecardUtil {
         try{
             battingScorecard.getPlayerScores().get(curBatsman).setBallsPlayed(ballsPlayed);
         }catch(Exception e){
-            log.error("Error while saving the total balls played by the current batting team");
-            throw e;
+            log.error("Error while saving the total balls played by the current batting team", e);
         }
     }
 
@@ -94,8 +88,7 @@ public class ScorecardUtil {
         try{
             bowlingScorecard.getPlayerScores().get(curBowler).incrementMaidenOver();
         }catch (Exception e){
-            log.error("Error while updating the number maiden over for the current bowler");
-            throw e;
+            log.error("Error while updating the number maiden over for the current bowler", e);
         }
     }
 
