@@ -1,4 +1,4 @@
-package com.tekion.Cricket.main;
+package com.tekion.Cricket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

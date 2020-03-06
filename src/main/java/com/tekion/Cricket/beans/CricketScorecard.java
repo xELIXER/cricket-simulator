@@ -1,10 +1,12 @@
 package com.tekion.Cricket.beans;
 
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.HashMap;
 
 @Data
+@Document
 public class CricketScorecard {
     private String firstBatting;
     private String winner;
@@ -16,8 +18,8 @@ public class CricketScorecard {
 
     public HashMap<Team,TeamScore> getCricketScorecardInstance(Team team1, Team team2){
         HashMap<Team, TeamScore> temp = new HashMap<>();
-        temp.put(team1, new TeamScore(team1.getPlayers()));
-        temp.put(team2, new TeamScore(team2.getPlayers()));
+        temp.put(team1, new TeamScore(team1.getName(), team1.getPlayers()));
+        temp.put(team2, new TeamScore(team2.getName(), team2.getPlayers()));
         return temp;
     }
 }
