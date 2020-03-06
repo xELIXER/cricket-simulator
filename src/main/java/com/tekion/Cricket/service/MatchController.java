@@ -41,7 +41,7 @@ public class MatchController {
         }
 //        cricketScorecardRepo.save(match.getScorecard());
 //        System.out.println(match.getScorecard().getTeamScores().get(match.getTeam1()));
-        teamScoreRepo.save(match.getScorecard().getTeamScores().get(match.getTeam1()));
+//        teamScoreRepo.save(match.getScorecard().getTeamScores().get(match.getTeam1()));
 
         return match.getScorecard();
     }
