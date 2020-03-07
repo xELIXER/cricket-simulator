@@ -13,7 +13,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @AllArgsConstructor
 public class Team {
-    private String id;
+    private int id;
     private String name;
     private List<Player> players;
 

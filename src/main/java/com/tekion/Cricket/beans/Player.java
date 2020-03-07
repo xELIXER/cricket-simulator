@@ -10,6 +10,7 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 public class Player {
+    private int id;
     private String name;
     private String DOB;
     private Role role;

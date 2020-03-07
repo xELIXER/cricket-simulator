@@ -16,7 +16,9 @@ public class CricketMatch extends Match {
         super(name, groundName, date,first,second);
         this.overs = overs;
         this.team1 = Team.getTeamInstance(team1Name);
+        this.team1.setId(0);
         this.team2 = Team.getTeamInstance(team2Name);
+        this.team2.setId(1);
         this.scorecard = new CricketScorecard(team1,team2);
     }
 

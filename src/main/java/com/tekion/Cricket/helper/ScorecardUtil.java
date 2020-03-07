@@ -12,7 +12,7 @@ public class ScorecardUtil {
 
     public static void incrementRunsScored(TeamScore battingScorecard, Player curBatsman, int runs) {
         try{
-            battingScorecard.getPlayerScores().get(curBatsman).incrementRuns(runs);
+            battingScorecard.getPlayerScores().get(curBatsman.getId()).incrementRuns(runs);
             battingScorecard.incrementRuns(runs);
         }
         catch (Exception e){
@@ -28,13 +28,13 @@ public class ScorecardUtil {
     public static void incrementBoundary(TeamScore battingScorecard, Player curBatsman, int runs) {
         if(runs == 4)
             try{
-                battingScorecard.getPlayerScores().get(curBatsman).incrementFours();
+                battingScorecard.getPlayerScores().get(curBatsman.getId()).incrementFours();
             }catch (Exception e){
                 log.error("Error while incrementing Fours: ",e);
             }
         else
             try{
-                battingScorecard.getPlayerScores().get(curBatsman).incrementSixes();
+                battingScorecard.getPlayerScores().get(curBatsman.getId()).incrementSixes();
             }catch (Exception e){
                 log.error("Error while incrementing Sixes", e);
             }
@@ -42,7 +42,7 @@ public class ScorecardUtil {
 
     public static void incrementWicketsTakenByBowler(TeamScore bowlingScorecard, Player curBowler) {
         try{
-            bowlingScorecard.getPlayerScores().get(curBowler).incrementWicketTaken();
+            bowlingScorecard.getPlayerScores().get(curBowler.getId()).incrementWicketTaken();
         }catch(Exception e){
             log.error("Error while incrementing wickets taken by the current bowler", e);
         }
@@ -50,9 +50,9 @@ public class ScorecardUtil {
 
     public static void incrementRunsGiven(TeamScore bowlingScorecard, Player curBowler, int runs) {
         try{
-            bowlingScorecard.getPlayerScores().get(curBowler).incrementRunsGiven( runs );
+            bowlingScorecard.getPlayerScores().get(curBowler.getId()).incrementRunsGiven( runs );
             if(runs == 0)
-                bowlingScorecard.getPlayerScores().get(curBowler).incrementDotBalls();
+                bowlingScorecard.getPlayerScores().get(curBowler.getId()).incrementDotBalls();
         }catch (Exception e){
             log.error("error while incrementing runs" , e);
         }
@@ -70,7 +70,7 @@ public class ScorecardUtil {
 
     public static void ballDelivered(Player curBowler, TeamScore bowlingScorecard) {
         try{
-            bowlingScorecard.getPlayerScores().get(curBowler).incrementBallsDelivered();
+            bowlingScorecard.getPlayerScores().get(curBowler.getId()).incrementBallsDelivered();
         }catch(Exception e){
             log.error("Error while updating the  number of Balls delivered by the current bowler", e);
         }
@@ -78,7 +78,7 @@ public class ScorecardUtil {
 
     public static void saveBallsPlayed(TeamScore battingScorecard, Player curBatsman, int ballsPlayed) {
         try{
-            battingScorecard.getPlayerScores().get(curBatsman).setBallsPlayed(ballsPlayed);
+            battingScorecard.getPlayerScores().get(curBatsman.getId()).setBallsPlayed(ballsPlayed);
         }catch(Exception e){
             log.error("Error while saving the total balls played by the current batting team", e);
         }
@@ -86,14 +86,14 @@ public class ScorecardUtil {
 
     public static void incrementMaidenOver(TeamScore bowlingScorecard, Player curBowler){
         try{
-            bowlingScorecard.getPlayerScores().get(curBowler).incrementMaidenOver();
+            bowlingScorecard.getPlayerScores().get(curBowler.getId()).incrementMaidenOver();
         }catch (Exception e){
             log.error("Error while updating the number maiden over for the current bowler", e);
         }
     }
 
-    public static boolean ballsLeftToDeliver(TeamScore bowlingScorecard, Player curBowler){
-        return bowlingScorecard.getPlayerScores().get(curBowler).getBallsDelivered() >=
-                bowlingScorecard.getPlayerScores().get(curBowler).getBallsToDeliver();
+    public static boolean ballsLeftToDeliver(TeamScore bowlingScorecard, Integer curBowlerId){
+        return bowlingScorecard.getPlayerScores().get(curBowlerId).getBallsDelivered() >=
+                bowlingScorecard.getPlayerScores().get(curBowlerId).getBallsToDeliver();
     }
 }
