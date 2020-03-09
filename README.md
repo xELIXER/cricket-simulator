@@ -6,27 +6,33 @@ All the classes with only instance variable and no methods are put into /beans. 
   - Beans
     - Match
     - CricketMatch _extends Match_
+    - CricketScorecard
     - Player
     - PlayerScore
     - Scorecard
     - Team
     - TeamScore
+    - WinLoseRecord
   - Controller
-    - MatchController
-    - ScorecardController
+    - CricketGameApi
+    - RetrieveRecordsApi
+    - RetrieveStatsApi
   - helper
-    - PlayMatch
+    - InningSimulator
     - ScorecardUtil
     - TeamUtil
+  - repo
+    - CricketScorecardRepo
+    - TeamScoreRepo
+    - WinLoseRecordRepo
   - Main
     - CricketApplication
   - service
-    - SetupMatch
+    - MatchController
   - Util
-    - GenerateRuns
+    - MathUtil
     - Role
-    - Toss
-
+    
 ### Features
 - Two teams are assumed, India and Australia.
 - A ```toss()``` is done to decide who goes first.
@@ -40,11 +46,14 @@ All the classes with only instance variable and no methods are put into /beans. 
     
  - Scoreboard is available for each team as well as each player wise.
  - Maiden over feature allows us to see which all bowler did the bowling and gave 0 runs.
+ - All the details of each match are saved in the DB.
+ - Endpoints are exposed to retrieve details of all the previous matches and individually for the teams also. 
 ### Tech
 - Spring Boot 2.2.3
 - Java 13
 - InteliJ IDEA 2019.3.2
 - Gradle
+- MongoDB
 
 ### Run
 
@@ -57,4 +66,7 @@ If using PostMan use the Preview mode to see the response.
 - `localhost:8080/scorecard`       : Scoreboard for the both the teams with all players.
 - `localhost:8080/scorecard/team1` : Scoreboard for 1st team with all players.
 - `localhost:8080/scorecard/team2` : Scoreboard for 2nd team with all players.
+- `localhost:8080/get/all` : Get all the records in time descending order.
+- `localhost:8080/get/{teamName}` : Get all the match records of the given team.
+- `localhost:8080/stats/{teamName}` : Get stats of the given team.
 

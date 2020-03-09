@@ -39,10 +39,4 @@ public class CricketGameApi {
                 "</body>";
     }
 
-    @PostMapping("/all")
-    public List<CricketScorecard> getAllMatchRecords() {
-        List<CricketScorecard> result = cricketScorecardRepo.findAll();
-        System.out.println(result);
-        return cricketScorecardRepo.findAll();
-    }
 }
