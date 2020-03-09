@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Document
-@Component
 public class WinLoseRecord {
 
     @Id

@@ -43,6 +43,7 @@ public class MatchController {
             match.getScorecard().setFirstBatting(match.getTeam2().getName());
 
         }
+
         //Save all match details.
         cricketScorecardRepo.save(match.getScorecard());
         //Save Individual team scores
