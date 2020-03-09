@@ -1,8 +1,5 @@
 package com.tekion.Cricket.service;
 
-
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoDatabase;
 import com.tekion.Cricket.beans.CricketMatch;
 import com.tekion.Cricket.beans.CricketScorecard;
 import com.tekion.Cricket.beans.Team;
@@ -16,8 +13,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
-import static com.tekion.Cricket.util.MathUtil.toss;
 import static com.tekion.Cricket.helper.InningSimulator.simulateInning;
+import static com.tekion.Cricket.util.MathUtil.toss;
 
 @Slf4j
 @Service
